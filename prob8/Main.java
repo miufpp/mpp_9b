@@ -32,19 +32,19 @@ public class Main {
 	
 	private boolean findProduct(String prodName) {
         return Optional.ofNullable(orderItems)
-                .orElse(Collections.emptyList())
-                .stream()
-                .map(item -> Optional.ofNullable(item)
-                        .map(OrderItem::getProduct)
-                        .map(Product::getProductName)
-                        .orElse(null))
-                .anyMatch(name -> prodName.equals(name));
+            .orElse(Collections.emptyList())
+            .stream()
+            .map(item -> Optional.ofNullable(item)
+                    .map(OrderItem::getProduct)
+                    .map(Product::getProductName)
+                    .orElse(null))
+            .anyMatch(name -> prodName.equals(name));
     }
 	
 	private void loadOrderItemData() {
 		orderItems.add(new OrderItem(new Product("1016", "Tools", 131.00), 3));
 		orderItems.add(new OrderItem(new Product("1017", "Fishing Rod", 111.00), 1));
 		orderItems.add(new OrderItem(new Product("1018", "Game of Go",66.00), 2));
-		orderItems.add(new OrderItem(new Product("1019", "Flowersu", 221.00), 5));
+		orderItems.add(new OrderItem(new Product("1019", "Flowers", 221.00), 5));
 	}
 }
