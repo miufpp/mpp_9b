@@ -22,9 +22,10 @@ public class Main {
 	//a stream pipeline, and prints to the console
 	public static void ordering1(List<Integer> list) {
 		List<Integer> sortedList = list.stream()
-                .sorted(Comparator.comparingInt(Math::abs).thenComparing(Comparator.naturalOrder()))
+                .sorted(Comparator.comparingInt(Math::abs)
+                        .thenComparing(Comparator.naturalOrder()))
                 .collect(Collectors.toList());
-        System.out.println(sortedList);		
+        System.out.println(sortedList);	
 	}
 	
 	//Orders words by first reversing each and comparing 
